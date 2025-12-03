@@ -1,0 +1,84 @@
+{
+  "providers": {
+    "tiingo": {
+      "enabled": false,
+      "api_key": "",
+      "priority": 1,
+      "description": "Tiingo - High-quality financial data",
+      "supported_assets": [
+        "stocks",
+        "etfs",
+        "crypto"
+      ],
+      "rate_limit": 1000
+    },
+    "openbb": {
+      "enabled": false,
+      "api_key": "",
+      "priority": 2,
+      "description": "OpenBB - Open-source financial data platform",
+      "supported_assets": [
+        "stocks",
+        "etfs",
+        "crypto",
+        "forex",
+        "futures"
+      ],
+      "rate_limit": 5000
+    },
+    "alpaca": {
+      "enabled": false,
+      "api_key": "",
+      "api_secret": "",
+      "paper_trading": true,
+      "priority": 3,
+      "description": "Alpaca - Commission-free trading API",
+      "supported_assets": [
+        "stocks",
+        "crypto"
+      ],
+      "rate_limit": 200
+    },
+    "yahoo_finance": {
+      "enabled": true,
+      "api_key": "",
+      "priority": 4,
+      "description": "Yahoo Finance - Free delayed data",
+      "supported_assets": [
+        "stocks",
+        "etfs",
+        "indices"
+      ],
+      "rate_limit": 2000
+    },
+    "cftc": {
+      "enabled": true,
+      "api_key": "",
+      "priority": 5,
+      "description": "CFTC - Commitment of Traders reports",
+      "supported_assets": [
+        "futures",
+        "commodities"
+      ],
+      "rate_limit": 100
+    },
+    "quandl": {
+      "enabled": false,
+      "api_key": "",
+      "priority": 6,
+      "description": "Quandl/Nasdaq Data Link",
+      "supported_assets": [
+        "all"
+      ],
+      "rate_limit": 300
+    }
+  },
+  "settings": {
+    "default_provider": "yahoo_finance",
+    "fallback_enabled": true,
+    "cache_duration_hours": 24,
+    "auto_update": true,
+    "update_frequency": "daily"
+  },
+  "last_updated": "2025-12-03T15:35:33.677798"
+}

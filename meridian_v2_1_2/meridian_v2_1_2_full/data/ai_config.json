@@ -1,0 +1,76 @@
+{
+  "providers": {
+    "chatgpt": {
+      "enabled": false,
+      "api_key": "",
+      "model": "gpt-4",
+      "organization": "",
+      "description": "OpenAI ChatGPT/GPT-4",
+      "capabilities": [
+        "code",
+        "research",
+        "reports",
+        "critique",
+        "generation"
+      ],
+      "cost_per_1k_tokens": 0.03,
+      "context_window": 8192
+    },
+    "claude": {
+      "enabled": false,
+      "api_key": "",
+      "model": "claude-3-opus-20240229",
+      "description": "Anthropic Claude 3",
+      "capabilities": [
+        "code",
+        "research",
+        "reports",
+        "critique",
+        "generation"
+      ],
+      "cost_per_1k_tokens": 0.015,
+      "context_window": 200000
+    },
+    "grok": {
+      "enabled": false,
+      "api_key": "",
+      "model": "grok-2",
+      "description": "xAI Grok 2",
+      "capabilities": [
+        "code",
+        "research",
+        "reports"
+      ],
+      "cost_per_1k_tokens": 0.01,
+      "context_window": 32000
+    },
+    "gemini": {
+      "enabled": false,
+      "api_key": "",
+      "model": "gemini-pro",
+      "description": "Google Gemini Pro",
+      "capabilities": [
+        "code",
+        "research",
+        "reports",
+        "generation"
+      ],
+      "cost_per_1k_tokens": 0.00125,
+      "context_window": 32000
+    }
+  },
+  "settings": {
+    "default_provider": "chatgpt",
+    "fallback_enabled": true,
+    "timeout_seconds": 30,
+    "max_retries": 3,
+    "role_assignments": {
+      "code_generation": "chatgpt",
+      "research_analysis": "claude",
+      "report_writing": "claude",
+      "risk_commentary": "grok",
+      "strategy_generation": "chatgpt"
+    }
+  },
+  "last_updated": "2025-12-03T15:35:33.680247"
+}
