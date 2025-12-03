@@ -11,8 +11,8 @@ except ImportError:
     STREAMLIT_AVAILABLE = False
     st = None
 
-from .dashboard_config import DashboardConfig
-from .data_api import DashboardAPI
+from meridian_v2_1_2.dashboard.dashboard_config import DashboardConfig
+from meridian_v2_1_2.dashboard.data_api import DashboardAPI
 
 
 def main():
@@ -93,7 +93,7 @@ def render_home(api):
     
     with col1:
         st.metric("Portfolio Equity", f"${portfolio['equity']:,.0f}", 
-                  f"${portfolio['total_pnl']:,+.0f}")
+                  f"${portfolio['total_pnl']:+,.0f}")
     
     with col2:
         risk_level = oversight['risk_assessment']['level'].upper()
@@ -131,7 +131,7 @@ def render_portfolio(api):
     with col2:
         st.metric("Equity", f"${portfolio['equity']:,.0f}")
     with col3:
-        st.metric("Total PnL", f"${portfolio['total_pnl']:,+.0f}")
+        st.metric("Total PnL", f"${portfolio['total_pnl']:+,.0f}")
     
     # Positions table
     st.subheader("Positions")

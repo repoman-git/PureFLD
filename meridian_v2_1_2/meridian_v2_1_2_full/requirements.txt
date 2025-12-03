@@ -1,0 +1,48 @@
+# Meridian v2.1.2 — Quantitative Trading Platform
+# Requirements File
+
+# Core Data Science
+numpy>=1.23.0
+pandas>=1.4.0
+scipy>=1.9.0
+
+# Configuration & Validation
+pydantic>=2.0.0
+
+# Testing
+pytest>=7.0.0
+pytest-cov>=4.0.0
+
+# Visualization & Charting
+matplotlib>=3.5.0
+plotly>=5.0.0
+seaborn>=0.12.0
+
+# Dashboard & Web UI
+streamlit>=1.20.0
+fastapi>=0.100.0
+uvicorn>=0.20.0
+
+# Data Integration (optional, for future use)
+# openbb>=4.0.0  # Uncomment when ready for live data
+# alpaca-py>=0.10.0  # Uncomment when ready for live trading
+
+# Jupyter & Notebooks
+jupyter>=1.0.0
+ipykernel>=6.0.0
+notebook>=6.4.0
+jupyterlab>=3.0.0
+nbconvert>=7.0.0
+nbformat>=5.0.0
+nbclient>=0.10.0
+streamlit-monaco>=0.1.0
+
+# Utilities
+python-dateutil>=2.8.0
+pytz>=2022.1
+tenacity>=8.0.0
+humanize>=4.0.0
+
+# Optional: Performance
+# numba>=0.56.0  # Uncomment for JIT compilation speedups
+
