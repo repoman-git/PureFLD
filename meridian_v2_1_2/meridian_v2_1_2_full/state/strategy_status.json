@@ -3,7 +3,7 @@
     "strategy_name": "test_strategy",
     "state": "research",
     "version": "v2.1.2",
-    "days_in_state": 46,
+    "days_in_state": 54,
     "last_transition": "2025-12-03T11:01:42.290163",
     "metadata": {
       "wfa_metrics": {
