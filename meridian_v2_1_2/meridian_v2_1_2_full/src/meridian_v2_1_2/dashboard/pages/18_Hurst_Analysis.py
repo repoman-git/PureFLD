@@ -24,7 +24,10 @@ from meridian_v2_1_2.hurst import (
     plot_hurst_view,
     plot_phase_vs_price,
     plot_sentient_trader_full,
-    plot_sentient_trader_interactive
+    plot_sentient_trader_interactive,
+    RightTranslationAdjuster,
+    plot_sentient_dashboard,
+    create_multi_cycle_comparison
 )
 from meridian_v2_1_2.paper_trading import LiveDataFeed
 from meridian_v2_1_2.strategies.strategy_router import load_strategy
@@ -128,6 +131,11 @@ if st.button("🔄 RUN HURST ANALYSIS", type="primary", use_container_width=True
                 
                 # Phase all cycles
                 all_phases = phasing_engine.phase_all(price)
+                
+                # Apply right-translation if enabled
+                if use_right_translation:
+                    adjuster = RightTranslationAdjuster(tolerance=0.35)
+                    all_phases = adjuster.adjust_all_cycles(all_phases)
                 
                 # Build VTLs for each cycle
                 vtls = {}
