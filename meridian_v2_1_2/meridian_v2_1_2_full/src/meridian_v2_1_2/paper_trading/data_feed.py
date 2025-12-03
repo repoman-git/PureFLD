@@ -56,23 +56,31 @@ class LiveDataFeed:
     def fetch_latest_ohlc(
         self,
         symbol: str,
-        interval: str = '1d'
+        interval: str = '1d',
+        period: str = '2y'
     ) -> Optional[pd.DataFrame]:
         """
-        Fetch latest OHLC bar.
+        Fetch OHLC data.
         
         Args:
             symbol: Asset symbol
             interval: Interval ('1d', '1h', '5m', etc.)
+            period: Period ('1d', '5d', '1mo', '3mo', '6mo', '1y', '2y', '5y', '10y', 'max')
+                   Default: '2y' (2 years of data for proper analysis)
         
         Returns:
             DataFrame with OHLCV or None
+        
+        Available periods:
+        - '1d', '5d', '1mo', '3mo', '6mo' - Short-term
+        - '1y', '2y', '5y' - Medium-term (recommended for strategies)
+        - '10y', 'max' - Long-term (max = all available, ~21 years for GLD)
         """
         try:
             import yfinance as yf
             
             ticker = yf.Ticker(symbol)
-            data = ticker.history(period='5d', interval=interval)
+            data = ticker.history(period=period, interval=interval)
             
             if not data.empty:
                 return data
