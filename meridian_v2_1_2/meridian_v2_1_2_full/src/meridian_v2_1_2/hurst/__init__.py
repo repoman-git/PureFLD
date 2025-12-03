@@ -29,6 +29,7 @@ from .cycle_forecaster import CycleForecaster
 from .cycle_strategy_generator import CycleStrategyGenerator
 from .cycle_ensemble import CycleEnsemble, GRUForecaster, HarmonicForecaster, TransformerForecaster
 from .gpt_strategy_explainer import StrategyExplainer
+from .intermarket_engine import IntermarketCycleEngine
 
 __all__ = [
     'HurstPhasingEngine',
@@ -57,5 +58,6 @@ __all__ = [
     'HarmonicForecaster',
     'TransformerForecaster',
     'StrategyExplainer',
+    'IntermarketCycleEngine',
 ]
 
