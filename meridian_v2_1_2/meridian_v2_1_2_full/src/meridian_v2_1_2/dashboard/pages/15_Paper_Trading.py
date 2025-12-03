@@ -130,11 +130,15 @@ with col1:
     symbol = st.text_input("Symbol", value="GLD", help="Asset symbol (e.g., GLD, SPY, TLT)")
 
 with col2:
-    advanced_mode = st.checkbox("Advanced Mode", value=False, help="Show advanced diagnostics")
+    data_period = st.selectbox(
+        "Historical Data",
+        options=['2y', '5y', '10y', '20y', 'max'],
+        index=3,  # Default to 20y
+        help="Amount of historical data to fetch"
+    )
 
 with col3:
-    st.markdown("")  # Spacing
-    st.markdown("")  # Spacing
+    advanced_mode = st.checkbox("Advanced Mode", value=False, help="Show advanced diagnostics")
 
 # Run E2E analysis button
 if st.button("🚀 RUN END-TO-END ANALYSIS", type="primary", use_container_width=True):

@@ -108,8 +108,9 @@ class PaperTradingOrchestrator:
         # Step 1: Fetch live data
         try:
             price = self.data_feed.fetch_latest_price(symbol)
-            # Fetch 2 years of data for proper strategy analysis
-            ohlc = self.data_feed.fetch_latest_ohlc(symbol, interval='1d', period='2y')
+            # Fetch 5 years of data by default (can request up to 20y or 'max')
+            # Use 20 years for deep historical analysis
+            ohlc = self.data_feed.fetch_latest_ohlc(symbol, interval='1d', period='20y')
             
             if price is None or ohlc is None or ohlc.empty:
                 result['status'] = 'error'
