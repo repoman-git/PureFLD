@@ -30,6 +30,7 @@ from .cycle_strategy_generator import CycleStrategyGenerator
 from .cycle_ensemble import CycleEnsemble, GRUForecaster, HarmonicForecaster, TransformerForecaster
 from .gpt_strategy_explainer import StrategyExplainer
 from .intermarket_engine import IntermarketCycleEngine
+from .intermarket_dashboard import intermarket_dashboard, create_macro_regime_view
 
 __all__ = [
     'HurstPhasingEngine',
@@ -59,5 +60,7 @@ __all__ = [
     'TransformerForecaster',
     'StrategyExplainer',
     'IntermarketCycleEngine',
+    'intermarket_dashboard',
+    'create_macro_regime_view',
 ]
 
