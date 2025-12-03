@@ -1,0 +1,20 @@
+═══════════════════════════════════════════════════════════════════
+Meridian Doctor PRO — Run at 2025-12-03 14:52:30
+═══════════════════════════════════════════════════════════════════
+
+Python Version: Python 3.12.12
+[WARN] Workspace venv detected
+Critical Packages:
+  [ERROR] numpy missing
+  [ERROR] pandas missing
+  [ERROR] scipy missing
+  [OK] pytest: 9.0.1
+  [OK] pydantic: 2.12.5
+
+Optional Packages:
+  [WARN] matplotlib not installed
+  [WARN] streamlit not installed
+  [OK] plotly: 6.5.0
+  [OK] fastapi: 0.120.4
+
+Directory Structure:

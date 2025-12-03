@@ -1,0 +1,33 @@
+{
+  "runs": [
+    {
+      "run_id": "test-123",
+      "timestamp": "2025-12-03T14:00:00",
+      "strategy_name": "FLD",
+      "params": {
+        "fld_offset": 10
+      },
+      "metrics": {
+        "sharpe_ratio": 1.5,
+        "total_return": 0.25,
+        "max_drawdown": -0.1,
+        "win_rate": 0.6,
+        "num_trades": 50
+      },
+      "success": true,
+      "error": null,
+      "num_trades": 0,
+      "equity_summary": {
+        "initial": 0,
+        "final": 0,
+        "peak": 0,
+        "trough": 0
+      }
+    }
+  ],
+  "metadata": {
+    "created": "2025-12-03T14:57:05.711821",
+    "last_updated": "2025-12-03T14:58:58.422065",
+    "total_runs": 1
+  }
+}
