@@ -77,6 +77,27 @@ STRATEGY_METADATA = {
             'Exit on volatility spikes',
             'Risk-first approach'
         ]
+    },
+    'Hurst-ETF': {
+        'name': 'Hurst-ETF',
+        'description': 'J.M. Hurst cycle analysis with VTL breaks',
+        'asset_classes': ['ETF'],
+        'best_for': ['GLD', 'SLV', 'TLT', 'SPY', 'QQQ'],
+        'default_params': {
+            'nominal_periods': [20, 40, 80],
+            'smooth_factor': 0.5,
+            'phase_threshold': 0.2,
+            'allow_short': False,
+            'stop_loss': 0.02,
+            'take_profit': 0.05
+        },
+        'rules': [
+            'Detect cycle troughs using Hilbert transform',
+            'Construct Valid Trend Lines (VTL)',
+            'Long on VTL breaks in low phase (near trough)',
+            'Exit on VTL breaks in high phase (near peak)',
+            'Multi-timeframe cycle confirmation'
+        ]
     }
 }
 
