@@ -13,7 +13,10 @@ from .roles import (
     RiskProfilerAgent,
     ParameterScientistAgent,
     StrategyGeneratorAgent,
-    DocumentationAgent
+    DocumentationAgent,
+    COTAnalysisAgent,
+    MarketRegimeAgent,
+    PerformanceAuditorAgent
 )
 from .orchestrator import ResearchOrchestrator
 
@@ -27,6 +30,9 @@ __all__ = [
     'ParameterScientistAgent',
     'StrategyGeneratorAgent',
     'DocumentationAgent',
+    'COTAnalysisAgent',
+    'MarketRegimeAgent',
+    'PerformanceAuditorAgent',
     'ResearchOrchestrator',
 ]
 
