@@ -115,6 +115,9 @@ class PaperTradingOrchestrator:
                 result['error'] = 'Failed to fetch data'
                 return result
             
+            # Normalize column names to lowercase for strategy compatibility
+            ohlc.columns = [col.lower() for col in ohlc.columns]
+            
             result['data'] = {
                 'current_price': price,
                 'ohlc': ohlc.tail(50).to_dict()  # Last 50 bars
