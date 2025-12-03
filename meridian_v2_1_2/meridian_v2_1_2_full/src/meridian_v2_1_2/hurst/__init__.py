@@ -25,6 +25,8 @@ from .hurst_multitimeframe_dashboard import multi_tf_dashboard
 from .hurst_harmonics import HarmonicsEngine
 from .hurst_cycle_scanner import CycleScanner
 from .hurst_cycle_scanner_dashboard import plot_cycle_scanner, plot_synchrony_network
+from .cycle_forecaster import CycleForecaster
+from .cycle_strategy_generator import CycleStrategyGenerator
 
 __all__ = [
     'HurstPhasingEngine',
@@ -46,5 +48,7 @@ __all__ = [
     'CycleScanner',
     'plot_cycle_scanner',
     'plot_synchrony_network',
+    'CycleForecaster',
+    'CycleStrategyGenerator',
 ]
 
