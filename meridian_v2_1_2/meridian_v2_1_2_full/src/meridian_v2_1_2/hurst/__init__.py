@@ -27,6 +27,8 @@ from .hurst_cycle_scanner import CycleScanner
 from .hurst_cycle_scanner_dashboard import plot_cycle_scanner, plot_synchrony_network
 from .cycle_forecaster import CycleForecaster
 from .cycle_strategy_generator import CycleStrategyGenerator
+from .cycle_ensemble import CycleEnsemble, GRUForecaster, HarmonicForecaster, TransformerForecaster
+from .gpt_strategy_explainer import StrategyExplainer
 
 __all__ = [
     'HurstPhasingEngine',
@@ -50,5 +52,10 @@ __all__ = [
     'plot_synchrony_network',
     'CycleForecaster',
     'CycleStrategyGenerator',
+    'CycleEnsemble',
+    'GRUForecaster',
+    'HarmonicForecaster',
+    'TransformerForecaster',
+    'StrategyExplainer',
 ]
 
