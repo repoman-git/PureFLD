@@ -18,6 +18,10 @@ from .hurst_plotting import plot_hurst_view, plot_phase_vs_price
 from .hurst_visual_full import plot_sentient_trader_full, plot_sentient_trader_interactive
 from .hurst_right_translation import RightTranslationAdjuster
 from .hurst_dashboard_plotly import plot_sentient_dashboard, create_multi_cycle_comparison
+from .hurst_fld import FLDEngine
+from .hurst_fld_plotting import plot_fld
+from .hurst_fld_dashboard import plot_fld_interactive
+from .hurst_multitimeframe_dashboard import multi_tf_dashboard
 
 __all__ = [
     'HurstPhasingEngine',
@@ -31,5 +35,9 @@ __all__ = [
     'RightTranslationAdjuster',
     'plot_sentient_dashboard',
     'create_multi_cycle_comparison',
+    'FLDEngine',
+    'plot_fld',
+    'plot_fld_interactive',
+    'multi_tf_dashboard',
 ]
 
