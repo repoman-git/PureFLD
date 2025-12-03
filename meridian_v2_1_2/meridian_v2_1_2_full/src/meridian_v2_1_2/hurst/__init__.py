@@ -15,6 +15,7 @@ from .hurst_phasing import HurstPhasingEngine
 from .hurst_vtl import HurstVTLBuilder, HurstVTLBreakDetector
 from .hurst_diagnostics import HurstDiagnostics
 from .hurst_plotting import plot_hurst_view, plot_phase_vs_price
+from .hurst_visual_full import plot_sentient_trader_full, plot_sentient_trader_interactive
 
 __all__ = [
     'HurstPhasingEngine',
@@ -23,5 +24,7 @@ __all__ = [
     'HurstDiagnostics',
     'plot_hurst_view',
     'plot_phase_vs_price',
+    'plot_sentient_trader_full',
+    'plot_sentient_trader_interactive',
 ]
 

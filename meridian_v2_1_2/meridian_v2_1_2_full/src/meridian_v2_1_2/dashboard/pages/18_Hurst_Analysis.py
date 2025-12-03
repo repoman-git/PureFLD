@@ -22,7 +22,9 @@ from meridian_v2_1_2.hurst import (
     HurstVTLBreakDetector,
     HurstDiagnostics,
     plot_hurst_view,
-    plot_phase_vs_price
+    plot_phase_vs_price,
+    plot_sentient_trader_full,
+    plot_sentient_trader_interactive
 )
 from meridian_v2_1_2.paper_trading import LiveDataFeed
 from meridian_v2_1_2.strategies.strategy_router import load_strategy
@@ -198,7 +200,13 @@ if st.session_state.hurst_result:
     st.markdown("---")
     
     # Tabs for different views
-    tab1, tab2, tab3, tab4 = st.tabs(["📊 Price & VTL", "🔄 Phase Charts", "📈 Cycle Diagnostics", "🎯 Trading Signals"])
+    tab1, tab2, tab3, tab4, tab5 = st.tabs([
+        "📊 Price & VTL", 
+        "🔄 Phase Charts", 
+        "🎨 Sentient Trader View",
+        "📈 Cycle Diagnostics", 
+        "🎯 Trading Signals"
+    ])
     
     with tab1:
         st.markdown("### Price with Valid Trend Lines")
@@ -281,6 +289,70 @@ if st.session_state.hurst_result:
             plt.close()
     
     with tab3:
+        st.markdown("### 🎨 Sentient Trader Professional View")
+        
+        st.info("""
+        **Professional multi-cycle visualization** replicating Sentient Trader software:
+        - Color-coded cycle troughs (yellow=20d, orange=40d, blue=80d)
+        - Sized markers by cycle degree
+        - Timing arcs between troughs
+        - Future projection windows
+        - Cycle timing bars
+        - Peak detection
+        """)
+        
+        # Configuration options
+        col1, col2, col3, col4 = st.columns(4)
+        
+        with col1:
+            show_peaks = st.checkbox("Show Peaks", value=True)
+        with col2:
+            show_arcs = st.checkbox("Show Arcs", value=True)
+        with col3:
+            show_projection = st.checkbox("Show Projections", value=True)
+        with col4:
+            show_cycle_bars = st.checkbox("Show Cycle Bars", value=True)
+        
+        # Generate Sentient Trader plot
+        try:
+            fig = plot_sentient_trader_full(
+                price=result['price'],
+                phasing_results=result['all_phases'],
+                show_peaks=show_peaks,
+                show_arcs=show_arcs,
+                show_projection=show_projection,
+                show_cycle_bars=show_cycle_bars,
+                title=f"{result['symbol']} - Sentient Trader Full Cycle Analysis"
+            )
+            
+            st.pyplot(fig)
+            plt.close()
+            
+            st.success("✅ Professional multi-cycle visualization complete!")
+            
+        except Exception as e:
+            st.error(f"Error generating Sentient Trader plot: {e}")
+            import traceback
+            st.code(traceback.format_exc())
+        
+        # Optional: Interactive Plotly version
+        if st.checkbox("Show Interactive Version (Plotly)", value=False):
+            try:
+                fig_interactive = plot_sentient_trader_interactive(
+                    price=result['price'],
+                    phasing_results=result['all_phases'],
+                    title=f"{result['symbol']} - Interactive Cycle Analysis"
+                )
+                
+                if fig_interactive:
+                    st.plotly_chart(fig_interactive, use_container_width=True)
+                else:
+                    st.info("Plotly not available - install with: pip install plotly")
+                    
+            except Exception as e:
+                st.warning(f"Interactive plot unavailable: {e}")
+    
+    with tab4:
         st.markdown("### Cycle Diagnostics")
         
         diagnostics = HurstDiagnostics()
@@ -311,7 +383,7 @@ if st.session_state.hurst_result:
             else:
                 st.info(f"Need at least 2 troughs for diagnostics (found {len(troughs)})")
     
-    with tab4:
+    with tab5:
         st.markdown("### Trading Signals (Hurst-ETF Strategy)")
         
         st.markdown("""
