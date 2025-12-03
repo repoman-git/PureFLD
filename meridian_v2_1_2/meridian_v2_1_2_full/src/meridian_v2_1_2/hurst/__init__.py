@@ -22,6 +22,9 @@ from .hurst_fld import FLDEngine
 from .hurst_fld_plotting import plot_fld
 from .hurst_fld_dashboard import plot_fld_interactive
 from .hurst_multitimeframe_dashboard import multi_tf_dashboard
+from .hurst_harmonics import HarmonicsEngine
+from .hurst_cycle_scanner import CycleScanner
+from .hurst_cycle_scanner_dashboard import plot_cycle_scanner, plot_synchrony_network
 
 __all__ = [
     'HurstPhasingEngine',
@@ -39,5 +42,9 @@ __all__ = [
     'plot_fld',
     'plot_fld_interactive',
     'multi_tf_dashboard',
+    'HarmonicsEngine',
+    'CycleScanner',
+    'plot_cycle_scanner',
+    'plot_synchrony_network',
 ]
 
