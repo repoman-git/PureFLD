@@ -1,0 +1,16 @@
+{
+  "run_id": "20251203_115440_229402",
+  "timestamp": "2025-12-03T11:54:40.229402",
+  "run_type": "dry_live",
+  "git_hash": "efa3f81",
+  "config": {
+    "date": "2020-01-01"
+  },
+  "performance": {
+    "pnl": -100000.0,
+    "equity": 0.0
+  },
+  "warnings": [],
+  "model_risk_score": null,
+  "metadata": {}
+}

@@ -1,0 +1,22 @@
+{
+  "test_strategy": {
+    "strategy_name": "test_strategy",
+    "state": "research",
+    "version": "v2.1.2",
+    "days_in_state": 46,
+    "last_transition": "2025-12-03T11:01:42.290163",
+    "metadata": {
+      "wfa_metrics": {
+        "mean_oos_sharpe": 1.2,
+        "overfit_index": 1.3,
+        "win_rate": 0.6,
+        "stability_score": 2.0
+      },
+      "paper_metrics": {},
+      "live_metrics": {},
+      "health_status": {
+        "status": "OK"
+      }
+    }
+  }
+}
