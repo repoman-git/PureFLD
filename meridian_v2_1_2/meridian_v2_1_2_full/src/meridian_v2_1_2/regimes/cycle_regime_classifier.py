@@ -424,10 +424,14 @@ class CycleRegimeClassifier:
         
         y_pred = self.model.predict(X_test_scaled)
         
+        # Get unique labels present in data
+        unique_labels = sorted(y_test.unique())
+        target_names = [RegimeType.NAMES[i] for i in unique_labels]
+        
         metrics = {
             'train_accuracy': train_score,
             'test_accuracy': test_score,
-            'classification_report': classification_report(y_test, y_pred, target_names=[RegimeType.NAMES[i] for i in range(5)]),
+            'classification_report': classification_report(y_test, y_pred, target_names=target_names, zero_division=0),
             'confusion_matrix': confusion_matrix(y_test, y_pred)
         }
         
@@ -476,9 +480,15 @@ class CycleRegimeClassifier:
             probabilities = self.model.predict_proba(X_scaled)
             result['regime_confidence'] = probabilities.max(axis=1)
             
-            # Add individual class probabilities
-            for i in range(5):
-                result[f'prob_{RegimeType.NAMES[i]}'] = probabilities[:, i]
+            # Add individual class probabilities (only for classes in model)
+            n_classes = probabilities.shape[1]
+            for i in range(min(5, n_classes)):
+                if i < len(self.model.classes_):
+                    class_idx = list(self.model.classes_).index(i) if i in self.model.classes_ else None
+                    if class_idx is not None:
+                        result[f'prob_{RegimeType.NAMES[i]}'] = probabilities[:, class_idx]
+                    else:
+                        result[f'prob_{RegimeType.NAMES[i]}'] = 0.0
         
         return result
     

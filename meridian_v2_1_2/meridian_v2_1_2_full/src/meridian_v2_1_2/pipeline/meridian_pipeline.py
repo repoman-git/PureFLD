@@ -31,7 +31,7 @@ class MeridianPipeline:
         results['phasing'] = {}
         for symbol, prices in price_dict.items():
             try:
-                results['phasing'][symbol] = self.phaser.compute_phase(prices, 40)
+                results['phasing'][symbol] = self.phaser.phase_cycle(prices, 40)
             except Exception as e:
                 print(f"  ⚠️ {symbol} phasing failed: {e}")
         
