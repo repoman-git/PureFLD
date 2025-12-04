@@ -1,0 +1,16 @@
+```mermaid
+flowchart LR
+
+DEV[Developer edits code]
+--> TEST[Run integration tests]
+--> DOCKER[docker compose build]
+--> STACK[docker compose up -d]
+--> VERIFY[Check API + Dashboard health]
+--> PIPELINE[docker compose run --rm meridian-scheduler]
+--> REVIEW[Review JSON outputs + logs]
+--> COMMIT[Commit changes]
+--> PUSH[Push to repo]
+
+TEST -->|fails| FIX[Fix issues] --> TEST
+```
+

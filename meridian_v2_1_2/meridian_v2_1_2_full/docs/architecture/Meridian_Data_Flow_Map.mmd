@@ -1,0 +1,38 @@
+```mermaid
+flowchart LR
+
+EXT[External Market Data\n(Tiingo/Yahoo/Polygon/Alpaca)] 
+--> DL[Data Loader\n(min year 2000 enforced)]
+--> VAL[Validator\nreal-data check, bar count check]
+--> PROC[Processing Layer]
+
+subgraph Engines[Core Engines]
+    PHASE[Phasing Engine]
+    HARM[Harmonics Engine]
+    FORE[Forecast Engine]
+    VOL[Volatility/Risk Engine]
+    REGIME[Regime Classifier]
+    INTER[Intermarket Engine]
+    STRAT[Strategy Evolution]
+    ALLOC[Portfolio Allocation]
+end
+
+PROC --> PHASE
+PROC --> HARM
+PROC --> FORE
+PROC --> VOL
+PROC --> REGIME
+PROC --> INTER
+
+PHASE --> STRAT
+VOL --> ALLOC
+STRAT --> ALLOC
+
+ALLOC --> PIPE[Daily Pipeline Runner]
+
+PIPE --> SAVE[Save JSON Maps + SQLite]
+
+SAVE --> API[FastAPI Backend]
+API --> DASH[Streamlit Dashboard]
+```
+

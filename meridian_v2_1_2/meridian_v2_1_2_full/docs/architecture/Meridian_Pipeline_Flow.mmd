@@ -1,0 +1,20 @@
+```mermaid
+flowchart TD
+
+START([Start daily pipeline])
+--> FETCH[Fetch data from Tiingo/Yahoo\n(min year 2000)]
+--> VALID[Validate dataset\n(≥1500 bars)]
+--> PHASE[Run Hurst Phasing]
+--> HARM[Run Harmonics]
+--> FORE[Run Forecast Engine]
+--> VOL[Run Volatility & Risk]
+--> REGIME[Run Regime Classifier]
+--> INTER[Run Intermarket Engine]
+--> STRAT[Run Strategy Evolution]
+--> ALLOC[Run Portfolio Allocation]
+--> SAVE[Save results\n(JSON + SQLite)]
+--> OUTPUT[Expose results to API]
+--> DASH[Display in Streamlit UI]
+--> END([Pipeline Complete])
+```
+

@@ -1,0 +1,17 @@
+```mermaid
+flowchart TD
+
+PUSH[Developer pushes to GitHub]
+--> CI[CI Pipeline Starts]
+
+CI --> LINT[Lint + Static Checks]
+CI --> PYTEST[Run Python Tests]
+CI --> DOCKERBUILD[Build Docker Images]
+CI --> REPORT[Test Report + Coverage]
+
+DOCKERBUILD -->|success| DEPLOY[Optional Cloud Deploy:\nAzure / GCP Container Apps]
+DOCKERBUILD -->|fail| FIX[Developer Fixes Code]
+
+DEPLOY --> COMPLETE([Deployment Complete])
+```
+

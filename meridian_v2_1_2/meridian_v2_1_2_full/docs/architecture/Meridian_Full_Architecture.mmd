@@ -1,0 +1,116 @@
+```mermaid
+flowchart TD
+
+%% =============================
+%% EXTERNAL DATA
+%% =============================
+subgraph DATA[🌐 External Data Sources]
+    YF[Yahoo Finance]
+    TI[Tiingo]
+    POLY[Polygon.io]
+    AV[Alpha Vantage]
+    ALP_MD[Alpaca Market Data]
+end
+
+%% =============================
+%% INGESTION LAYER
+%% =============================
+subgraph INGEST[📥 Data Ingestion Layer]
+    DL[Data Loader\n(min year 2000)]
+    VAL[Validator\n(≥1500 bars, real data only)]
+end
+
+DATA --> DL --> VAL
+
+%% =============================
+%% CORE ENGINES
+%% =============================
+subgraph ENGINES[🧠 Core Quant Engines]
+    PHASE[Hurst Phasing Engine]
+    HARM[Harmonics Engine]
+    FORECAST[Forecast Engine\n(LSTM/Hilbert/FFT)]
+    VOL[Volatility & Risk Engine]
+    REGIME[Regime Classifier]
+    INTER[Intermarket Engine]
+    ALLOC[Portfolio Allocation]
+    STRAT[Strategy Evolution\n(Genetic Programming)]
+end
+
+VAL --> PHASE
+VAL --> HARM
+VAL --> FORECAST
+VAL --> VOL
+VAL --> REGIME
+VAL --> INTER
+PHASE --> STRAT
+VOL --> ALLOC
+STRAT --> ALLOC
+
+%% =============================
+%% DAILY PIPELINE
+%% =============================
+subgraph PIPE[🔧 Daily Pipeline]
+    RUN[Pipeline Runner]
+    SAVE[Save Outputs]
+end
+
+PHASE --> RUN
+HARM --> RUN
+FORECAST --> RUN
+VOL --> RUN
+REGIME --> RUN
+INTER --> RUN
+ALLOC --> RUN
+RUN --> SAVE
+
+%% =============================
+%% STORAGE LAYER
+%% =============================
+subgraph STORE[💾 Storage Layer]
+    DUCK[SQLite Database]
+    FILES[File Storage\n(phasing, forecast, strategy)]
+    LOGS[Logs / Policy Violations]
+end
+
+SAVE --> DUCK
+SAVE --> FILES
+RUN --> LOGS
+
+%% =============================
+%% API BACKEND
+%% =============================
+subgraph API[🛰 FastAPI Backend]
+    ENDPTS[/phasing\n/forecast\n/intermarket\n/strategy\n/pipeline/run_daily]
+end
+
+STORE --> API
+
+%% =============================
+%% DASHBOARD UI
+%% =============================
+subgraph DASH[📊 Streamlit Dashboard]
+    CYC[Cycles Panel]
+    FUI[Forecast Terminal]
+    VUI[Volatility Panel]
+    IUI[Intermarket Dashboard]
+    SUI[Strategy Signals]
+    MUI[Macro Regime Monitor]
+end
+
+API --> CYC
+API --> FUI
+API --> VUI
+API --> IUI
+API --> SUI
+API --> MUI
+
+%% =============================
+%% SCHEDULER
+%% =============================
+subgraph SCHED[⏱ APScheduler]
+    JOB[run_daily()]
+end
+
+JOB --> API
+```
+

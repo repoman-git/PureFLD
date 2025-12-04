@@ -1,0 +1,42 @@
+```mermaid
+flowchart TB
+
+subgraph Compose[docker-compose Stack]
+
+    subgraph API[🐍 meridian-api\n(FastAPI)]
+        CODE_API[/meridian_api code/]
+        PORT_API[Port: 8000]
+        API_DEPS[ML + Engines]
+    end
+
+    subgraph DASH[📊 meridian-dashboard\n(Streamlit UI)]
+        CODE_DASH[/meridian_app code/]
+        PORT_DASH[Port: 8501]
+    end
+
+    subgraph SCHED[⏱ meridian-scheduler]
+        CODE_SCHED[/scheduler code/]
+        JOB_SCHED[run_daily()]
+    end
+
+    subgraph VOL[💾 Shared Volumes]
+        DDATA[(meridian_local/data)]
+        DLOGS[(meridian_local/logs)]
+        DMODELS[(meridian_local/registry)]
+        DCACHE[(meridian_local/cache)]
+        DDB[(meridian.db SQLite)]
+    end
+end
+
+API <--> DDATA
+API <--> DMODELS
+API <--> DLOGS
+API <--> DCACHE
+API <--> DDB
+
+SCHED --> API
+SCHED --> DLOGS
+
+DASH --> API
+```
+
