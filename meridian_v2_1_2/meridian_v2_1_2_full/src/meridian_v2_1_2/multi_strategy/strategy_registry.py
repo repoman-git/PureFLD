@@ -69,3 +69,4 @@ class StrategyRegistry:
         """List enabled strategies"""
         return [name for name, enabled in self.enabled.items() if enabled]
 
+

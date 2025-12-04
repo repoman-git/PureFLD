@@ -82,3 +82,4 @@ def add_advanced_navigation():
         "📨 Events & Notifications"
     ]
 
+

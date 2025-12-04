@@ -72,3 +72,4 @@ def render_regime_context(api):
     df_sens = pd.DataFrame(sensitivity)
     st.dataframe(df_sens, use_container_width=True, hide_index=True)
 
+

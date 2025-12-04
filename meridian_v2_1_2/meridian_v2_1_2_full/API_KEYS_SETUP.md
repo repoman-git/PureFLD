@@ -213,3 +213,4 @@ Just add your keys and everything will work automatically!
 **When Added:** ✅ AUTOMATIC ACTIVATION  
 **Fallback:** ✅ WORKS WITHOUT KEYS (synthetic)
 
+

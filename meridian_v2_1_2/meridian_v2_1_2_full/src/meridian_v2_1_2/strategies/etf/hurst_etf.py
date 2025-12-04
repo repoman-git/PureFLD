@@ -212,3 +212,4 @@ class HurstETF:
             'final_equity': equity[-1]
         }
 
+

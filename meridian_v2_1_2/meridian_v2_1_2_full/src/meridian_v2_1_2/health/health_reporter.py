@@ -69,3 +69,4 @@ def generate_health_report(
     reporter = HealthReporter(report_path)
     return reporter.generate_report(health_status, eod_results)
 
+

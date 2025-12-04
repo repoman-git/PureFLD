@@ -39,3 +39,4 @@ class DashboardConfig:
     db_path: str = "meridian_local/meridian.db"
     logs_path: str = "logs/"
 
+

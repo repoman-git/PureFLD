@@ -270,3 +270,4 @@ def get_quick_tips(metrics: Dict[str, float]) -> List[str]:
     
     return tips[:5]  # Return max 5 tips
 
+

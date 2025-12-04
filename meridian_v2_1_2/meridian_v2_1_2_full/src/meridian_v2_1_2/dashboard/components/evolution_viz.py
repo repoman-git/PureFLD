@@ -288,3 +288,4 @@ def create_evolution_dashboard(evolution_result: Dict[str, Any]) -> Dict[str, go
     
     return figures
 
+

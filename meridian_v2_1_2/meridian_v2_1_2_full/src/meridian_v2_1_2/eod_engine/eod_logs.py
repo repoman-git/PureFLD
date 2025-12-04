@@ -72,3 +72,4 @@ def log_eod_results(
     logger = EODLogger(log_dir)
     logger.log_cycle(results)
 
+

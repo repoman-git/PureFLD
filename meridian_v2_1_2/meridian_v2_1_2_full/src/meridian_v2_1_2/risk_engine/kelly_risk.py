@@ -97,3 +97,4 @@ def apply_kelly_sizing(
     kelly_adjusted.name = 'kelly_adjusted_size'
     return kelly_adjusted
 
+

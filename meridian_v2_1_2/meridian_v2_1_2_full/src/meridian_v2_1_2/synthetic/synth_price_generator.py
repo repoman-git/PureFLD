@@ -95,3 +95,4 @@ def generate_synthetic_prices(
     
     return df
 
+

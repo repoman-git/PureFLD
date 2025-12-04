@@ -60,3 +60,4 @@ def get_strategy_profile(strategy_obj: Any) -> Dict[str, Any]:
         'status': 'stub_implementation'
     }
 
+

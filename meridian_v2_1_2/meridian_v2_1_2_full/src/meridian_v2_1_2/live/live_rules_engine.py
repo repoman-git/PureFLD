@@ -172,3 +172,4 @@ class LiveRulesEngine:
         """Clear violation history"""
         self.violations = []
 
+

@@ -194,3 +194,4 @@ def mask_api_key(api_key: str, visible_chars: int = 4) -> str:
     
     return api_key[:visible_chars] + '*' * 11 + api_key[-3:]
 
+

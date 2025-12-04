@@ -130,3 +130,4 @@ def get_all_profiles() -> Dict[str, ModelProfile]:
         'chatgpt': CHATGPT_PROFILE
     }
 
+

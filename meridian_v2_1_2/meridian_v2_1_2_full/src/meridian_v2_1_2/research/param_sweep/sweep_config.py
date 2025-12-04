@@ -61,3 +61,4 @@ class SweepConfig:
     save_top_n: int = 10
     output_dir: str = "outputs/sweeps/"
 
+

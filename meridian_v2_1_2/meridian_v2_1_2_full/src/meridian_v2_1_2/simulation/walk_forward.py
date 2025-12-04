@@ -273,3 +273,4 @@ def _safe_std(values: List[float]) -> float:
     clean_values = [v for v in values if np.isfinite(v)]
     return float(np.std(clean_values)) if len(clean_values) > 1 else 0.0
 
+

@@ -97,3 +97,4 @@ class ResearchAgent:
     def __repr__(self) -> str:
         return f"<ResearchAgent: {self.name} | {self.specialization}>"
 
+

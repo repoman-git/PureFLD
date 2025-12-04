@@ -158,3 +158,4 @@ class FLD_ETF:
             'take_profit': (0.05, 0.30)
         }
 
+

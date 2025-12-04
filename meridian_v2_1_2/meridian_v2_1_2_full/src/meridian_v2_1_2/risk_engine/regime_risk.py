@@ -59,3 +59,4 @@ def apply_regime_multipliers(
     adjusted.name = 'regime_adjusted_size'
     return adjusted
 
+

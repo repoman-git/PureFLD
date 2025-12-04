@@ -363,3 +363,4 @@ def compute_combined_equity_curve(
     equity = pd.Series(base_config.backtest.initial_capital, index=prices.index)
     return equity
 
+

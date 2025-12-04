@@ -124,3 +124,4 @@ def plot_synchrony_network(synchrony_map, min_symbols=2, title="Cycle Synchroniz
     
     return fig
 
+

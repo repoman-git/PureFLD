@@ -71,3 +71,4 @@ class CombinedPnL:
         worst = min(strategies.items(), key=lambda x: x[1]['current_pnl'])
         return {'name': worst[0], 'pnl': worst[1]['current_pnl']}
 
+

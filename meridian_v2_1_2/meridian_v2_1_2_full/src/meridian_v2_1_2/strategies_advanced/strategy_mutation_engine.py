@@ -55,3 +55,4 @@ def create_strategy_variant(
         'status': 'stub_implementation'
     }
 
+

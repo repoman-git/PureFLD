@@ -206,3 +206,4 @@ class PortfolioState:
             'timestamp': datetime.now().isoformat()
         }
 
+

@@ -161,3 +161,4 @@ class CycleScanner:
         df.to_csv(path, index=False)
         return df
 
+

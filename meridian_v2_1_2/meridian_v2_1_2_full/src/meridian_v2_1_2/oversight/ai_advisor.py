@@ -228,3 +228,4 @@ class AIAdvisor:
         
         return '\n'.join(lines)
 
+

@@ -26,3 +26,4 @@ def simple_bps_slippage(price: float, bps: float, side: str) -> float:
         # Selling gets less
         return price - slip_amount
 
+

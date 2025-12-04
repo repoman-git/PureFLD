@@ -94,3 +94,4 @@ class AllocationPanel:
             for name, inv_risk in inv_risks
         }
 
+

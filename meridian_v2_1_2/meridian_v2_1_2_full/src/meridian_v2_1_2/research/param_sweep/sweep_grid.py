@@ -97,3 +97,4 @@ class SweepGrid:
         """Get total number of parameters"""
         return len(self.generate())
 
+

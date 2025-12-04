@@ -57,3 +57,4 @@ class StreamerConfig:
         if self.openbb_symbols is None:
             self.openbb_symbols = ['GLD', 'LTPZ']
 
+

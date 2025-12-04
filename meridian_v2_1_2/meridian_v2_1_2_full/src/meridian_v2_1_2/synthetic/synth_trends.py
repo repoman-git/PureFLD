@@ -78,3 +78,4 @@ def generate_trend_component(
     else:
         return np.zeros(length)
 
+

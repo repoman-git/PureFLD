@@ -65,3 +65,4 @@ def render_oversight_timeline(api):
     with col3:
         st.metric("Critical", sum(1 for e in events if e['severity'] == 'critical'))
 
+

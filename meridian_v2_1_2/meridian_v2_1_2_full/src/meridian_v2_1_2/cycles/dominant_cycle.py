@@ -96,3 +96,4 @@ def estimate_dominant_cycle_fft(
     # Would use np.fft.fft() to find dominant frequency
     return estimate_dominant_cycle(prices, config)
 
+

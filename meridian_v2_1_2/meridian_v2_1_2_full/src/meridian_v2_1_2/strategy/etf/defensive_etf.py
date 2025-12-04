@@ -66,3 +66,4 @@ class DefensiveETF:
             'inverse_logic': [True, False]
         }
 
+

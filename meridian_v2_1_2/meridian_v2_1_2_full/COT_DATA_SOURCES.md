@@ -197,3 +197,4 @@ print(f"Got {len(df)} weeks of COT data")
 
 **Recommendation:** Go with **commitmentoftraders.org** - it's free, reliable, and has all the data we need! 🎯
 
+

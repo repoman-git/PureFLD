@@ -115,3 +115,4 @@ class LiveHeartbeat:
         self.is_alive = True
         self.last_beat = datetime.now()
 
+

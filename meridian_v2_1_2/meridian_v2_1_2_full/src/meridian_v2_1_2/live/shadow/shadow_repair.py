@@ -190,3 +190,4 @@ class ShadowRepair:
             counts[action_type] = counts.get(action_type, 0) + 1
         return counts
 
+

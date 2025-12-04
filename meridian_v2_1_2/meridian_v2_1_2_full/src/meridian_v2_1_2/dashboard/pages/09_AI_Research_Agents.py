@@ -240,3 +240,4 @@ st.markdown("---")
 st.caption("Phase 7 | Multi-AI Research Agent System")
 st.caption("🔮 Future: Connect to GPT-4/Claude for enhanced analysis")
 
+

@@ -65,3 +65,4 @@ class LiveConfig:
         if self.forbidden_symbols is None:
             self.forbidden_symbols = []
 
+

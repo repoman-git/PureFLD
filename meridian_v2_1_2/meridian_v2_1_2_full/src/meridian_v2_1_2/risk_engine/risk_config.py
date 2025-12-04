@@ -49,3 +49,4 @@ class RiskConfig:
     # Smoothing
     smoothing_window: int = 3
 
+

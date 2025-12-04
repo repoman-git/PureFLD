@@ -262,3 +262,4 @@ def _test_quandl(api_key: Optional[str]) -> ProviderTestResult:
             timestamp=datetime.now().isoformat()
         )
 
+

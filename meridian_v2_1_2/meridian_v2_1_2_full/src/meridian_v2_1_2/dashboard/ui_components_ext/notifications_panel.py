@@ -96,3 +96,4 @@ def render_notifications(api):
                     if st.button(f"Dismiss", key=f"dismiss_{notif['id']}"):
                         st.success("Notification dismissed")
 
+

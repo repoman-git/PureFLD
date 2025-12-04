@@ -72,3 +72,4 @@ def generate_attribution_report(
     reporter = PerformanceReporter(report_path)
     return reporter.generate_report(strategy_attr, asset_attr, regime_attr, cycle_attr)
 
+

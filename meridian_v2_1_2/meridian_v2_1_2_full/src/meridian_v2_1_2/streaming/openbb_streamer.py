@@ -88,3 +88,4 @@ class OpenBBStreamer:
         age = (datetime.now() - self.last_update[symbol]).total_seconds()
         return age > max_age_seconds
 
+

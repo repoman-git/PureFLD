@@ -68,3 +68,4 @@ class EODStateMachine:
         """Get full state transition sequence"""
         return [s.value for s in self.state_history]
 
+

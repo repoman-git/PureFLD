@@ -9,3 +9,4 @@ from .cot_org_fetcher import COTOrgFetcher, fetch_cot_data
 
 __all__ = ['COTOrgFetcher', 'fetch_cot_data']
 
+

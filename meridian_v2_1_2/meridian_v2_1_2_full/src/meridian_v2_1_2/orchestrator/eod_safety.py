@@ -214,3 +214,4 @@ class EODSafety:
         """Get violations by severity level"""
         return [v for v in self.violations if v.severity == severity]
 
+

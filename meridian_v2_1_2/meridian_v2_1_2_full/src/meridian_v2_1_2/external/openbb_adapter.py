@@ -226,3 +226,4 @@ class OpenBBAdapter:
         
         return result
 
+

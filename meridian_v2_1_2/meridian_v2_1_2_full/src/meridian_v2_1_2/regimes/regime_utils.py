@@ -69,3 +69,4 @@ def smooth_regime(
     """
     return regime.rolling(window=window, min_periods=1, center=False).mean()
 
+

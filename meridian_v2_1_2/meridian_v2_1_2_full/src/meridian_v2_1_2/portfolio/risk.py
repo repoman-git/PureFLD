@@ -234,3 +234,4 @@ def comprehensive_risk_report(
         'total_return': float((equity_curve[-1] - equity_curve[0]) / equity_curve[0])
     }
 
+

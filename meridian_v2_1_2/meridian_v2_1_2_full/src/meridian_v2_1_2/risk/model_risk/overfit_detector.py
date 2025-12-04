@@ -105,3 +105,4 @@ def compute_oos_variance(wfa_results: List[Dict[str, Any]]) -> float:
     
     return np.var(oos_returns)
 
+

@@ -104,3 +104,4 @@ def load_prices(
     
     return df
 
+

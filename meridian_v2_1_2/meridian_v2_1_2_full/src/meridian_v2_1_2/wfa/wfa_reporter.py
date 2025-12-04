@@ -94,3 +94,4 @@ def generate_wfa_report(
     reporter = WFAReporter(report_path)
     return reporter.generate_report(wfa_results, wfa_metrics)
 
+

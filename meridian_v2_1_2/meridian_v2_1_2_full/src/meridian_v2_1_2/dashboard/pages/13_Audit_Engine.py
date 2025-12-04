@@ -284,3 +284,4 @@ st.caption("Phase X | AI Audit & Verification Engine")
 st.caption("🛡️ HonestAI Protocol: No hallucinations, explicit uncertainty, clear limitations")
 st.caption("🔒 Retail-safe: All outputs follow regulatory guidelines")
 
+

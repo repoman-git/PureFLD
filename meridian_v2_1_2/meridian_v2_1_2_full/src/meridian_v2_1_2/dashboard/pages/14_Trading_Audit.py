@@ -283,3 +283,4 @@ st.caption("Phase X-Trading | Professional Trading Desk Compliance System")
 st.caption("🛡️ Pre-trade validation | Risk gating | Multi-AI consensus")
 st.caption("⚠️  This is for risk management only - not financial advice")
 
+

@@ -171,3 +171,4 @@ class CycleStrategyGenerator:
             "risk_management": "Phase-based position sizing"
         }
 
+

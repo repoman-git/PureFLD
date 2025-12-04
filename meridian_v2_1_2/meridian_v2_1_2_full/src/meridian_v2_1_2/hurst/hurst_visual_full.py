@@ -366,3 +366,4 @@ def plot_sentient_trader_interactive(price: pd.Series,
     
     return fig
 
+

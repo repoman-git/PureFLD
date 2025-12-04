@@ -76,3 +76,4 @@ def smooth_turning_points(
     
     return smoothed.fillna(0)
 
+

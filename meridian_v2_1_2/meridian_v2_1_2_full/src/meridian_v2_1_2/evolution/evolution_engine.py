@@ -474,3 +474,4 @@ def export_best_to_dict(result: EvolutionResult) -> Dict[str, Any]:
         'timestamp': result.timestamp
     }
 
+

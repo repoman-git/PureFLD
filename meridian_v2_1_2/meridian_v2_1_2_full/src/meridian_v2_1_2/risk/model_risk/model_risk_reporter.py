@@ -260,3 +260,4 @@ def _generate_breakdown_report(
         
         f.write(f"\n- **Message**: {fragility.get('message', 'N/A')}\n")
 
+

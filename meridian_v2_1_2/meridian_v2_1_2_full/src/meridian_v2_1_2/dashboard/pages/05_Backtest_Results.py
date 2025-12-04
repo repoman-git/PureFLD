@@ -284,3 +284,4 @@ st.caption(f"📊 Showing {len(filtered_runs)} of {len(runs)} total runs")
 st.caption("Phase 4 | Backtest Results Registry")
 st.caption("💡 Tip: Use the Multi-Run Compare page to overlay multiple equity curves")
 
+

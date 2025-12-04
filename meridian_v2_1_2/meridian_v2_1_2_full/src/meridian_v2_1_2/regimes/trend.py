@@ -92,3 +92,4 @@ def get_trend_label(regime_code: int) -> str:
     }
     return labels.get(regime_code, f"Unknown ({regime_code})")
 
+

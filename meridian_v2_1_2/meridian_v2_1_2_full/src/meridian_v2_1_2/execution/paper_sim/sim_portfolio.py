@@ -182,3 +182,4 @@ class SimulatedPortfolio:
             'exposure': self.get_exposure()
         }
 
+

@@ -256,3 +256,4 @@ class StateStore:
         """Close database connection"""
         self.db.close()
 
+

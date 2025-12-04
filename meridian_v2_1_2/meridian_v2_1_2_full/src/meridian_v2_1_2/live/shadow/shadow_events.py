@@ -42,3 +42,4 @@ class ShadowEvent:
             'details': self.details or {}
         }
 
+

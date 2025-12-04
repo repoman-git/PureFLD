@@ -234,3 +234,4 @@ def calculate_risk_of_ruin(
         'conditional_var_95': float(np.mean(final_values[final_values <= np.percentile(final_values, 5)]))
     }
 
+

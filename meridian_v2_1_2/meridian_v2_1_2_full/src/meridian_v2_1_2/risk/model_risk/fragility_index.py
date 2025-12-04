@@ -109,3 +109,4 @@ def compute_perturbation_amplification(
     
     return np.mean(amplifications) if amplifications else 0.0
 
+

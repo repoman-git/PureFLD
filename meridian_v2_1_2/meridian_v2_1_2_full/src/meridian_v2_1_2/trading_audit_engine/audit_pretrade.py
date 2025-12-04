@@ -295,3 +295,4 @@ class PreTradeAuditor:
             'max_correlation': 0.7
         }
 
+

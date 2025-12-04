@@ -104,3 +104,4 @@ def get_latest_close(eod_data: Dict[str, pd.DataFrame]) -> Dict[str, float]:
     
     return latest
 
+

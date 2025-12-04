@@ -62,3 +62,4 @@ class StrategyCards:
             'unknown': '❓'
         }.get(status.lower(), '❓')
 
+

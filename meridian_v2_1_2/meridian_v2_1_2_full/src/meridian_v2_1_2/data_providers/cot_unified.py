@@ -284,3 +284,4 @@ def fetch_cot_data(
     provider = UnifiedCOTProvider(prefer_free=prefer_free)
     return provider.fetch_cot_data(symbol, start_date, end_date, source)
 
+

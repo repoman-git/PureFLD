@@ -71,3 +71,4 @@ class TestAttributionConsistency:
         # This test validates the data structure is correct
         assert len(gld_returns) == len(ltpz_returns)
 
+

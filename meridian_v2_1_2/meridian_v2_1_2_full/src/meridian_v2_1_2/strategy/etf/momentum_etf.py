@@ -59,3 +59,4 @@ class MomentumETF:
             'threshold': (0.0, 0.10)
         }
 
+

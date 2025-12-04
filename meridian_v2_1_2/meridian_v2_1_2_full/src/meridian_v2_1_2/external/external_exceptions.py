@@ -32,3 +32,4 @@ class OrderRejectionException(ExternalDataException):
     """Order rejected by safety checks or broker"""
     pass
 
+

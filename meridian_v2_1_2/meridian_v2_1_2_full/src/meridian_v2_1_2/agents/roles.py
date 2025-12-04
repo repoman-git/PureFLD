@@ -564,3 +564,4 @@ class PerformanceAuditorAgent(ResearchAgent):
         
         return {'insights': insights, 'recommendations': recommendations, 'summary': summary}
 
+

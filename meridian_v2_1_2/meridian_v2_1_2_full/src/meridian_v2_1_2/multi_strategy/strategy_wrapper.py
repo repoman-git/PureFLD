@@ -52,3 +52,4 @@ class StrategyWrapper:
         """Get strategy name"""
         return self.name
 
+

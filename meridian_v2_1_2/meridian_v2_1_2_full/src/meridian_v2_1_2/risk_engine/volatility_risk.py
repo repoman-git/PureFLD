@@ -59,3 +59,4 @@ def compute_volatility_sizing(
     vol_sizes.name = 'vol_size'
     return vol_sizes
 
+

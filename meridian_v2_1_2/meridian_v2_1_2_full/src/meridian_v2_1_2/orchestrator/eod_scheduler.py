@@ -110,3 +110,4 @@ class EODScheduler:
         """Reset to start of calendar"""
         self.current_idx = 0
 
+

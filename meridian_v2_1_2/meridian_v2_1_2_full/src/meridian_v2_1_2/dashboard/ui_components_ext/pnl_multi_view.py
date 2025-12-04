@@ -108,3 +108,4 @@ def render_pnl_multi_view(api):
         
         st.plotly_chart(fig, use_container_width=True)
 
+

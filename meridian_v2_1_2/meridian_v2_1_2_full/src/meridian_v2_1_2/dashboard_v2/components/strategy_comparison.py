@@ -77,3 +77,4 @@ class StrategyComparison:
         
         return (majority / len(signals)) * 100 if signals else 0.0
 
+

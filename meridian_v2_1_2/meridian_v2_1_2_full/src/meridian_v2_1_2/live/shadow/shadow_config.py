@@ -38,3 +38,4 @@ class ShadowConfig:
     write_shadow_reports: bool = True
     report_path: str = "logs/shadow/"
 
+

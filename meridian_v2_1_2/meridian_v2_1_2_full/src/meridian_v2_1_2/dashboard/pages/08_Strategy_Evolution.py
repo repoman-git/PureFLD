@@ -404,3 +404,4 @@ st.markdown("---")
 st.caption(f"Phase 6 | Strategy Evolution Engine")
 st.caption("💡 Tip: Start with 20 population, 10 generations for quick experiments")
 
+

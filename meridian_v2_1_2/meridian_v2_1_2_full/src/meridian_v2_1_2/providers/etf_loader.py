@@ -227,3 +227,4 @@ def is_leveraged_etf(symbol: str) -> bool:
     symbol = symbol.upper()
     return symbol in POPULAR_ETFS['leveraged']
 
+

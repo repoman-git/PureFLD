@@ -82,3 +82,4 @@ def get_cycle_regime_label(regime_code: int) -> str:
     }
     return labels.get(regime_code, f"Unknown ({regime_code})")
 
+

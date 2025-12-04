@@ -197,3 +197,4 @@ class ShadowEngine:
         """Clear event history"""
         self.events = []
 
+

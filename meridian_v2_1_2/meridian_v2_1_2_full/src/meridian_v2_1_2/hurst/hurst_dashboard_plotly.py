@@ -253,3 +253,4 @@ def create_multi_cycle_comparison(price: pd.Series,
     
     return fig
 
+

@@ -68,3 +68,4 @@ class OpenBBConnector:
         """Shutdown connector"""
         self._initialized = False
 
+

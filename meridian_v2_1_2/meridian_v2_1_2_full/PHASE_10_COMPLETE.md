@@ -317,3 +317,4 @@ Score < -0.5: STRONG BEARISH
 **Meridian v2.1.2 now has market structure intelligence! The system is self-aware of volatility, trend, and cycle regimes!** 🎉🚀📊
 
 👉 **Ready for Phase 11: Risk & Position Sizing Engine - where regimes drive adaptive behavior!** 💪
+

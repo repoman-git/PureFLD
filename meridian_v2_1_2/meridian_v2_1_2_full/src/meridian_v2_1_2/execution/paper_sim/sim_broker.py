@@ -179,3 +179,4 @@ class SimulatedBroker:
         """Update portfolio with current prices"""
         self.portfolio.update_market_values(prices)
 
+

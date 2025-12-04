@@ -141,3 +141,4 @@ def evaluate_promotion(
     # Already live or disabled
     return current_state, "No promotion applicable"
 
+

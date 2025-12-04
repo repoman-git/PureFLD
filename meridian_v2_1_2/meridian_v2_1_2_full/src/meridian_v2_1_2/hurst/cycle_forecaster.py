@@ -198,3 +198,4 @@ class CycleForecaster:
             "forecast_peaks": peaks
         }
 
+

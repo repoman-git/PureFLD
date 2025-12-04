@@ -64,3 +64,4 @@ class CycleETF:
             'smoothing': (1, 10)
         }
 
+

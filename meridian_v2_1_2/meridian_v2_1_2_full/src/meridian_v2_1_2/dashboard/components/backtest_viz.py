@@ -277,3 +277,4 @@ def comparison_chart(results: List[Dict[str, Any]]):
     
     st.plotly_chart(fig, use_container_width=True)
 
+

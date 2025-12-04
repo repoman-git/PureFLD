@@ -105,3 +105,4 @@ class EventBus:
         """Clear event history"""
         self.event_history = []
 
+

@@ -133,3 +133,4 @@ def _calculate_portfolio_metrics(equity: np.ndarray) -> Dict[str, float]:
         'final_equity': float(equity[-1])
     }
 
+

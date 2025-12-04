@@ -206,3 +206,4 @@ cot_data = adapter.get_cot_data('GLD', '2006-01-01', '2025-12-31')
 **Dependencies:** OpenBB SDK, API key  
 **Priority:** HIGH (needed for real COT analysis)
 
+

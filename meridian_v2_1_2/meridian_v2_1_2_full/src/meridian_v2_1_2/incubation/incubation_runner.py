@@ -122,3 +122,4 @@ def run_incubation_cycle(
         'transition_reason': status.metadata.get('transition_reason', 'N/A')
     }
 
+

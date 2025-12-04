@@ -219,3 +219,4 @@ def multi_tf_dashboard(price_daily,
 
     return fig
 
+

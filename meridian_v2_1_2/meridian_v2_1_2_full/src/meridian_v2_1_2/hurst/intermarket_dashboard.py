@@ -302,3 +302,4 @@ def create_macro_regime_view(results, title="Macro Cycle Regime Analysis"):
     
     return fig
 
+

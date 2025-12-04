@@ -117,3 +117,4 @@ class SimulatedPerformance:
             'return': self.daily_returns
         })
 
+

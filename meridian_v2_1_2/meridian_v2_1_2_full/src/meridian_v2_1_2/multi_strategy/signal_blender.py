@@ -179,3 +179,4 @@ def _gating_blend(
     
     return final_signal
 
+

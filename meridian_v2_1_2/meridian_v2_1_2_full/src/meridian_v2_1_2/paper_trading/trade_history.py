@@ -197,3 +197,4 @@ class TradeHistory:
         self.trades = []
         self.save()
 
+

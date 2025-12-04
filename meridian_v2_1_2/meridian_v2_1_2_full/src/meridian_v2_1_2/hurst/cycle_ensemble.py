@@ -274,3 +274,4 @@ class CycleEnsemble:
             "confidence": confidence
         }
 
+

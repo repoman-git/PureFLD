@@ -373,3 +373,4 @@ def _cluster_variance(cov_matrix, items):
     
     return np.dot(ivp, np.dot(sub_cov, ivp))
 
+

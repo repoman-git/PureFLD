@@ -309,3 +309,4 @@ def run_eod_day(config: MeridianConfig, date: str) -> Dict[str, Any]:
     
     return results
 
+

@@ -138,3 +138,4 @@ def test_connections(config: Optional[ExternalConfig] = None) -> Dict[str, Any]:
     tester = ConnectionTester(config)
     return tester.test_all()
 
+

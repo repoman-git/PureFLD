@@ -227,3 +227,4 @@ def init_database(db_path: str = "meridian_local/meridian.db") -> LocalDB:
     """
     return LocalDB(db_path)
 
+

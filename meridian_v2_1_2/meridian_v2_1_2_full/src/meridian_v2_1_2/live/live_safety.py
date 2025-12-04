@@ -201,3 +201,4 @@ class LiveSafety:
         """Get all critical safety triggers"""
         return [t for t in self.triggers if t.severity == 'critical']
 
+

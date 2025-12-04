@@ -93,3 +93,4 @@ def generate_synthetic_yields(
     
     return df
 
+

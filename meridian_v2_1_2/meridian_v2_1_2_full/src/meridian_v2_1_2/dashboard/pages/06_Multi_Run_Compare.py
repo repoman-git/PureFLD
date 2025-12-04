@@ -241,3 +241,4 @@ st.markdown("---")
 st.caption(f"📊 Comparing {len(selected_runs)} runs | {stats.get('total_runs', 0)} total in registry")
 st.caption("Phase 4B | Multi-Run Comparison")
 
+

@@ -129,3 +129,4 @@ def generate_incubation_report(
     reporter = IncubationReporter(report_path)
     return reporter.generate_report(status, cycle_result)
 
+

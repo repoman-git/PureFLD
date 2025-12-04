@@ -295,3 +295,4 @@ docs/DASHBOARD_V2_MULTI_STRATEGY.md
 **The machine is ready. The dashboard is live. The profits await!** 🚀💎🏆
 
 **(Time to start using it!)** 💰📈🔥
+

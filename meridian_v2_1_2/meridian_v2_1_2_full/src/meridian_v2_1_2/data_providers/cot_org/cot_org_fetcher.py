@@ -274,3 +274,4 @@ def fetch_cot_data(
     fetcher = COTOrgFetcher()
     return fetcher.fetch_cot_data(symbol, start_date, end_date)
 
+

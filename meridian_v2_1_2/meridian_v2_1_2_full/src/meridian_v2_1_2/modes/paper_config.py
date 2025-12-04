@@ -40,3 +40,4 @@ def validate_paper_mode(config) -> None:
     # Paper mode allows most features but simulates execution
     pass
 
+

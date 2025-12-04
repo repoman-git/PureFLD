@@ -37,3 +37,4 @@ class CorrelationMap:
         data = self.get_data()
         return data.get('strategies', [])
 
+

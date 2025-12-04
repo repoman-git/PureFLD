@@ -185,3 +185,4 @@ class MultiStrategyAPI:
         """Convert response to JSON string"""
         return json.dumps(data, indent=2, default=str)
 
+
