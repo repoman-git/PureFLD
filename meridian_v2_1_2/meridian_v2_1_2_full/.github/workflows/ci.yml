@@ -1,0 +1,59 @@
+name: Meridian 3.0 CI/CD
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Integration Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    
+    - name: Install dependencies
+      run: |
+        cd meridian_v2_1_2_full
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Run integration tests
+      run: |
+        cd meridian_v2_1_2_full
+        export PYTHONPATH="$PWD/src:$PYTHONPATH"
+        python tests/integration/meridian_integration_test.py
+    
+    - name: Check code quality
+      run: |
+        cd meridian_v2_1_2_full
+        pip install flake8
+        flake8 src/meridian_v2_1_2 --count --select=E9,F63,F7,F82 --show-source --statistics || true
+  
+  docker:
+    name: Docker Build Test
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Build Docker images
+      run: |
+        cd meridian_v2_1_2_full/deploy
+        docker-compose build
+    
+    - name: Test API container
+      run: |
+        cd meridian_v2_1_2_full/deploy
+        docker-compose up -d api
+        sleep 10
+        curl http://localhost:8000/health || exit 1
+        docker-compose down
+

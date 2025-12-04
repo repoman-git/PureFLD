@@ -94,7 +94,7 @@ class PairsSelector:
         self.cycle_periods = cycle_periods
         
         self.intermarket_engine = IntermarketCycleEngine(cycle_periods=cycle_periods)
-        self.phasing_engine = HurstPhasingEngine()
+        self.phasing_engine = HurstPhasingEngine(nominal_periods=cycle_periods)
     
     def select_pairs(
         self,
