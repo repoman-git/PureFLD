@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.api
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONPATH=/app/src
+    volumes:
+      - ../meridian_local:/app/meridian_local
+
+  app:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.app
+    ports:
+      - "8501:8501"
+    environment:
+      - PYTHONPATH=/app/src
+    depends_on:
+      - api
+
+networks:
+  default:
+    name: meridian-network
+

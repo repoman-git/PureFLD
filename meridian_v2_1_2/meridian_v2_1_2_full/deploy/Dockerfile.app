@@ -1,0 +1,16 @@
+FROM python:3.10-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY src/ /app/src/
+COPY meridian_app/ /app/meridian_app/
+
+ENV PYTHONPATH=/app/src
+
+EXPOSE 8501
+
+CMD ["streamlit", "run", "meridian_app/app.py", "--server.port", "8501", "--server.address", "0.0.0.0"]
+
