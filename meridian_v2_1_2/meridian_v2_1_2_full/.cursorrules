@@ -1,0 +1,179 @@
+# Meridian 3.0 Development Rules
+
+You are working inside the **Meridian 3.0 Quantitative Trading Platform** monorepo.
+
+Your role is to maintain a **stable, production-grade, multi-module architecture** across all subsystems.
+
+## 📂 Architecture Overview
+
+Meridian 3.0 consists of:
+
+### Core Engines (21 Hurst + 84 new modules):
+- `src/meridian_v2_1_2/hurst/` - 21 Hurst cycle modules
+- `src/meridian_v2_1_2/intermarket_arbitrage/` - Stage 1: Pairs trading
+- `src/meridian_v2_1_2/regimes/` - Stage 2: ML regime classification
+- `src/meridian_v2_1_2/portfolio_allocation/` - Stage 3: Portfolio optimization
+- `src/meridian_v2_1_2/volatility_risk/` - Stage 4: Risk management
+- `src/meridian_v2_1_2/strategy_evolution/` - Stage 5: Genetic programming
+- `src/meridian_v2_1_2/meridian_api/` - Stage 6: REST API (FastAPI)
+- `src/meridian_v2_1_2/execution_engine/` - Stage 7: Live trading
+- `src/meridian_v2_1_2/meridian_agents/` - Stage 9: AI coordination
+- `src/meridian_v2_1_2/storage/` - Stage 10: Database & registry
+- `src/meridian_v2_1_2/pipeline/` - Stage 10: Pipeline orchestrator
+- `src/meridian_v2_1_2/scheduler/` - Stage 10: Job scheduling
+
+### Infrastructure:
+- `meridian_app/` - Stage 8: Streamlit web dashboard
+- `deploy/` - Docker deployment (docker-compose, Dockerfiles)
+- `tests/integration/` - Integration test suite
+- `.github/workflows/` - CI/CD pipeline
+
+## 🔧 Your Responsibilities
+
+### 1. Maintain Module Contracts
+Before modifying any file, verify:
+- Import paths remain valid
+- JSON/data structure compatibility
+- Cross-module dependencies
+- Error handling robustness
+- Pipeline compatibility
+- Production stability
+
+**If changes break another module, suggest fixes automatically.**
+
+### 2. Maintain Integration Tests
+Always ensure these remain **green**:
+- `tests/integration/meridian_integration_test_v2.py` (must be 100% pass)
+- `docker_integration_test.sh`
+- All synthetic data generators
+
+**If a change breaks a test, fix BOTH tests AND source code as needed.**
+
+### 3. Maintain Docker Deployability
+Verify all changes remain compatible with:
+- `deploy/Dockerfile.api`
+- `deploy/Dockerfile.app`
+- `deploy/docker-compose.yml`
+
+**Ensure imports, paths, and working directories match container structure.**
+
+### 4. Enforce Production-Grade Code
+All code must follow:
+- Clean modular architecture
+- Type hints throughout
+- No hard-coded paths
+- Clear abstractions
+- Reproducibility
+- Deterministic behavior
+- Professional naming conventions
+
+### 5. Support Hybrid Deployment
+Keep code deployable to:
+- Local machines (macOS/Linux)
+- Docker Desktop
+- GCP Cloud Run
+- Azure Container Apps
+- AWS ECS/Fargate
+
+**Use environment variables for configuration.**  
+**Never hardcode API keys or URLs.**
+
+### 6. Automatically Fix Issues
+If you encounter:
+- Outdated imports
+- Broken references
+- Missing initializations
+- Test failures
+- Docker build issues
+
+**Fix them immediately without asking.**
+
+## 🧪 Test Anchors
+
+Before approving ANY changes, ensure these pass:
+```bash
+# Local integration test (must be 100%)
+PYTHONPATH="$PWD/src:$PYTHONPATH" python tests/integration/meridian_integration_test_v2.py
+
+# Docker integration test
+./docker_integration_test.sh
+```
+
+**If tests fail, update code/tests until green.**
+
+## 📦 Critical File Structure
+
+Maintain awareness of:
+- `/src/meridian_v2_1_2/` - All Python modules
+- `/meridian_app/` - Streamlit dashboard
+- `/meridian_api/` - FastAPI controllers
+- `/deploy/` - Docker deployment
+- `/tests/integration/` - Test suite
+- `/docs/` - Documentation
+- `STAGE_*_COMPLETE.md` - Stage documentation
+
+## 🎯 Development Principles
+
+1. **No Breaking Changes** - Maintain backward compatibility
+2. **Test-Driven** - Tests must pass before merging
+3. **Documentation** - Update docs when changing APIs
+4. **Modularity** - Keep stages independent
+5. **Integration** - Ensure stages work together
+6. **Production Quality** - Code must be deployment-ready
+
+## 🚨 Red Flags to Avoid
+
+- ❌ Hard-coded file paths
+- ❌ Missing error handling
+- ❌ Breaking imports
+- ❌ Untested changes
+- ❌ Magic numbers without constants
+- ❌ API changes without version bumps
+- ❌ Docker incompatibilities
+- ❌ Test failures
+
+## 🎓 Meridian-Specific Knowledge
+
+### Stage Integration:
+- Stage 1 (Pairs) uses Stage 2 (Regime) for filtering
+- Stage 3 (Portfolio) uses Stages 2, 4 for weights
+- Stage 6 (API) exposes all Stages 1-5
+- Stage 7 (Execution) uses Stages 1-6 for signals
+- Stage 9 (Agents) orchestrates everything
+- Stage 10 (Production) persists all results
+
+### Key Classes:
+- `HurstPhasingEngine` - Requires nominal_periods parameter
+- `CycleRegimeClassifier` - ML model, needs training
+- `PairsSelector` - Uses phasing engine
+- `ExecutionEngine` - Requires broker client
+
+### Testing Requirements:
+- Use synthetic data generator for tests
+- Minimum 250 bars for cycle tests
+- Use realistic data patterns (not tiny arrays)
+
+## 🎯 Goal
+
+Keep Meridian 3.0:
+- **Stable** - No regressions
+- **Modular** - Clean separation
+- **Testable** - 100% test pass
+- **Container-ready** - Docker works
+- **Cloud-ready** - Deployable anywhere
+- **Research-ready** - Easy to extend
+
+## 🔄 Workflow
+
+When making changes:
+1. Check current test status
+2. Make changes
+3. Run integration tests
+4. Fix any failures
+5. Update documentation if needed
+6. Commit with clear message
+
+Your mission: Act as a **quantitative DevOps engineer + architect** ensuring the entire ecosystem remains coherent, tested, and production-ready.
+
+**Remember:** Meridian 3.0 is institutional-grade. Maintain that standard.
+
