@@ -177,3 +177,80 @@ Your mission: Act as a **quantitative DevOps engineer + architect** ensuring the
 
 **Remember:** Meridian 3.0 is institutional-grade. Maintain that standard.
 
+## 📐 Architecture Diagram Maintenance
+
+### Automatic Diagram Synchronization
+Meridian maintains **6 versioned Mermaid diagrams** in `docs/architecture/`:
+
+1. `Meridian_Full_Architecture.mmd` - Complete system overview
+2. `Meridian_Data_Flow_Map.mmd` - Data flow from source to dashboard
+3. `Meridian_Docker_Architecture.mmd` - Container architecture
+4. `Meridian_Pipeline_Flow.mmd` - Daily pipeline execution
+5. `Meridian_Developer_Workflow.mmd` - Development TDD cycle
+6. `Meridian_CICD_Diagram.mmd` - CI/CD automation
+
+### Your Diagram Responsibilities
+
+**WHENEVER you change:**
+- Module structure (`src/meridian_v2_1_2/*`)
+- Docker configuration (`deploy/docker-compose.yml`, `Dockerfile.*`)
+- API endpoints (`meridian_api/controllers/*`)
+- Pipeline steps (`pipeline/meridian_pipeline.py`)
+- Dashboard pages (`meridian_app/pages/*`)
+- Storage layer (`storage/*`)
+
+**YOU MUST:**
+1. Update relevant diagram files in `docs/architecture/`
+2. Ensure version headers remain (`%% Diagram Version: v3.0.0`)
+3. Run `python3 scripts/update_architecture_diagrams.py`
+4. Run `python3 scripts/test_architecture_diagrams.py`
+5. Fix any validation errors
+
+### Diagram Validation Requirements
+
+Before finalizing changes:
+- ✅ All diagrams have correct version headers
+- ✅ Mermaid syntax validates (via mmdc)
+- ✅ PNG/SVG outputs regenerate successfully
+- ✅ Diagrams reflect current codebase architecture
+- ✅ Test harness passes 100%
+
+### Auto-Update Process
+
+```bash
+# Update diagrams + render outputs
+python3 scripts/update_architecture_diagrams.py
+
+# Validate all diagrams
+python3 scripts/test_architecture_diagrams.py
+```
+
+**If diagram tests fail, fix diagrams before committing code.**
+
+### Diagram Update Examples
+
+**Example 1:** New API endpoint added
+- Update: `Meridian_Full_Architecture.mmd` (add endpoint to API subgraph)
+- Update: `Meridian_Data_Flow_Map.mmd` (if it changes data flow)
+
+**Example 2:** New Docker service added
+- Update: `Meridian_Docker_Architecture.mmd` (add service container)
+- Update: `Meridian_Full_Architecture.mmd` (add to system overview)
+
+**Example 3:** Pipeline step added
+- Update: `Meridian_Pipeline_Flow.mmd` (add step to flow)
+- Update: `Meridian_Full_Architecture.mmd` (if it affects system design)
+
+### Commit Message Format
+
+When updating diagrams:
+```
+docs(architecture): update diagrams for [change description]
+
+- Updated: [diagram1.mmd, diagram2.mmd]
+- Reason: [architectural change made]
+- Validated: All tests passing
+```
+
+**Goal:** Architecture diagrams always match the actual codebase state.
+

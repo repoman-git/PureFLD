@@ -1,0 +1,48 @@
+name: Architecture Diagram Tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  diagram-validation:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+    
+    - name: Install Mermaid CLI
+      run: |
+        npm install -g @mermaid-js/mermaid-cli
+    
+    - name: Verify Mermaid CLI installation
+      run: |
+        mmdc --version
+    
+    - name: Run Architecture Diagram Tests
+      working-directory: ./meridian_v2_1_2_full
+      run: |
+        python3 scripts/test_architecture_diagrams.py
+    
+    - name: Upload diagram test results
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: diagram-test-results
+        path: |
+          meridian_v2_1_2_full/docs/architecture/
+          meridian_v2_1_2_full/docs/architecture/rendered/
+
